@@ -5,7 +5,7 @@ date: "09/04/2018"
 output: html_document
 ---
 
-```{r}
+```{r,echo=TRUE}
 # Reproducible Research: Peer-graded Assignment: Course Project 1
 # Loading the library required to produce plots
 library(lattice)
@@ -34,7 +34,7 @@ mean(aggdata$steps, na.rm = TRUE)
 median(aggdata$steps, na.rm = TRUE)
 
 # What is the average daily activity pattern?
-#   1. Make a time series plot (i.e. 𝚝𝚢𝚙𝚎 = “𝚕”) of the 5-minute interval (x-axis)   and the average number of steps taken, averaged across all days (y-axis)
+#   1. Make a time series plot (i.e. ???????????????? = ??????????) of the 5-minute interval (x-axis)   and the average number of steps taken, averaged across all days (y-axis)
 #   The average number of steps taken:
 steps_interval <- aggregate(steps~interval, data=activity, mean, na.rm=TRUE)
 # Time series plot of the average number of steps taken through base plotting:
@@ -45,8 +45,8 @@ max_steps_interval <- steps_interval[which.max(steps_interval$steps),]$interval
 max_steps_interval
 
 # Imputing missing values
-# Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.
-#   1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
+# Note that there are a number of days/intervals where there are missing values (coded as ????????). The presence of missing days may introduce bias into some calculations or summaries of the data.
+#   1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with ????????s)
 NA_fields <- is.na(activity[,1])
 # Let's check if NA fields are being computed properly (result should be 2304)
 summary(NA_fields)
