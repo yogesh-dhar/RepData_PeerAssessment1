@@ -66,7 +66,7 @@ activity_new[NA_fields,1]<-mean_fill
 aggdata1 <- aggregate(steps~date, data= activity_new, sum, na.rm = TRUE)
 hist(aggdata1$steps, breaks = "Sturges", col = "maroon", main = "Histogram of Steps per day after missing values are imputed", xlab = "Steps per day", ylab = "Frequency", labels = TRUE)
 
-# Let???s find mean and median after imputing values
+# Let us find mean and median after imputing values
 mean(aggdata1$steps)
 median(aggdata1$steps)
 activity_new$date <- as.Date(activity_new$date)
@@ -74,7 +74,7 @@ activity_new$date <- as.Date(activity_new$date)
 # Are there differences in activity patterns between weekdays and weekends?
 # For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part
 
-#   1. Create a new factor variable in the dataset with two levels ??? "weekday" and "weekend"" indicating whether a given date is a weekday or weekend day
+#   1. Create a new factor variable in the dataset with two levels - "weekday" and "weekend"" indicating whether a given date is a weekday or weekend day
 # Let us define Weekends and Weekdays based on date field
 activity$week <- ifelse(weekdays(activity_new$date) %in% c("Saturday", "Sunday"), "weekend", "weekday")
 # Add new column with Date_type
@@ -83,7 +83,7 @@ head(activity_new)
 
 # Test if values got rightly allocated between weekends and weekdays
 aggregate(steps~Date_type, data=activity_new, sum)
-#   2. Make a panel plot containing a time series plot (i.e. type = ???l???) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data
+#   2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data
 # I have tried formula with SUM and Mean both, however, I have prepared graph only with Mean
 # Sum
 aggdata_Day_type_interval <- aggregate(steps~interval + Date_type, data=activity_new, sum)
